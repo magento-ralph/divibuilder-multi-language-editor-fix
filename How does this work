@@ -1,0 +1,10 @@
+For those who want to know how this works, it is really quite simple.
+Wordpress does not allow a way to break use a different language for the editor other than the default language (English).
+So what I did was add logic and code to copy and rename the current language file and place in a different directory under the language directory.
+Example if Spanish was the editor's language then we generate a directory called es (if not already there) and copy the spanish translation file to language/es/ and rename as the english file.
+We also set the language path from /language to /language/es/
+This way wordpress serves up what it thinks is the english file but is really the Spanish translation.
+
+Once the es/ directory and files are copied it only checks the file to ensure it is there when you edit a page.
+Note: When you update the plugin the extra directories are removed and after updating the code fix, once the editor using the Spanish language setting edits their first page the directory and files are generated again.
+Also, if you check the "Issues" in this build, you will see that as of now, on each language change it will reload 2 times.  This is an issue that Divi has and nothing to do with my change.
